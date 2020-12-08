@@ -42,40 +42,34 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      print('click');
+                  child: RepeatContainerCode(
+                    onPressed: () {
                       setState(() {
                         selectGender = Gender.male;
                       });
                     },
-                    child: RepeatContainerCode(
-                      colors: selectGender == Gender.male
-                          ? activeColor
-                          : deActiveColor,
-                      CardWidget: RepeatTextandIcon(
-                        iconData: FontAwesomeIcons.male,
-                        label: 'Male',
-                      ),
+                    colors: selectGender == Gender.male
+                        ? activeColor
+                        : deActiveColor,
+                    CardWidget: RepeatTextandIcon(
+                      iconData: FontAwesomeIcons.male,
+                      label: 'Male',
                     ),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      print('yes');
+                  child: RepeatContainerCode(
+                    onPressed: () {
                       setState(() {
                         selectGender = Gender.female;
                       });
                     },
-                    child: RepeatContainerCode(
-                      colors: selectGender == Gender.female
-                          ? activeColor
-                          : deActiveColor,
-                      CardWidget: RepeatTextandIcon(
-                        iconData: FontAwesomeIcons.female,
-                        label: 'Female',
-                      ),
+                    colors: selectGender == Gender.female
+                        ? activeColor
+                        : deActiveColor,
+                    CardWidget: RepeatTextandIcon(
+                      iconData: FontAwesomeIcons.female,
+                      label: 'Female',
                     ),
                   ),
                 ),
