@@ -1,11 +1,11 @@
-import 'dart:ffi';
-
 import 'package:bmi_calculator_app/constantFile.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'IconTextFile.dart';
 import 'ContainerFile.dart';
 import 'constantFile.dart';
+import 'ResultFile.dart';
 
 enum Gender {
   male,
@@ -43,6 +43,7 @@ class _InputPageState extends State<InputPage> {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Expanded(
             child: Row(
@@ -204,12 +205,25 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: Color(0xFFEB1555),
-            margin: EdgeInsets.only(top: 10.0),
-            width: double.infinity,
-            height: 80.0,
-          )
+          // ToDo use GestureDetector and Navigator Widget to go on another Screen
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ResultScreen()));
+            },
+            child: Container(
+              child: Center(
+                child: Text(
+                  'Calculate',
+                  style: sButton,
+                ),
+              ),
+              color: Color(0xFFEB1555),
+              margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
+              width: double.infinity,
+              height: 80.0,
+            ),
+          ),
         ],
       ),
     );

@@ -12,3 +12,9 @@ const laText = TextStyle(
   fontSize: 50.0,
   fontWeight: FontWeight.w900,
 );
+
+const sButton = TextStyle(
+  fontSize: 25.0,
+  fontWeight: FontWeight.bold,
+  letterSpacing: 4.0,
+);
