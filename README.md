@@ -10,3 +10,7 @@ A New Flutter Application
 
 <img src ="https://user-images.githubusercontent.com/73787635/101657080-48a7da80-3a65-11eb-8fb5-228e6a50b2c9.png" height = 500, width = 300/> 
 <img src ="https://user-images.githubusercontent.com/73787635/101657349-97ee0b00-3a65-11eb-9165-74ff395792d1.png" height = 500, width = 300/>
+
+# Working of BMI Calculator
+
+<img src ="https://user-images.githubusercontent.com/73787635/101658224-9d982080-3a66-11eb-8451-adc65af8a13d.gif" height = 500, width = 300/>
