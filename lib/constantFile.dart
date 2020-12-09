@@ -7,3 +7,8 @@ const skLabelStyle = TextStyle(
   fontSize: 30.0,
   color: Colors.deepOrangeAccent,
 );
+
+const laText = TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.w900,
+);
