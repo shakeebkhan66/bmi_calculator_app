@@ -1,4 +1,8 @@
+import 'package:bmi_calculator_app/constantFile.dart';
 import 'package:flutter/material.dart';
+import 'constantFile.dart';
+import 'ContainerFile.dart';
+import 'input_page.dart';
 
 class ResultScreen extends StatelessWidget {
   @override
@@ -7,7 +11,67 @@ class ResultScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('BMI Result'),
       ),
-      body: Text("Body Data"),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              child: Center(
+                child: Text(
+                  'Your Result',
+                  style: sTitle,
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 5,
+            child: RepeatContainerCode(
+              colors: activeColor,
+              CardWidget: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Normal',
+                    style: sResult,
+                  ),
+                  Text(
+                    '18.3',
+                    style: sBMI,
+                  ),
+                  Text(
+                    'BMI is low you should have to work more',
+                    textAlign: TextAlign.center,
+                    style: sBody,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Expanded(
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => InputPage()));
+              },
+              child: Container(
+                child: Center(
+                  child: Text(
+                    'Recalculate',
+                    style: sButton,
+                  ),
+                ),
+                color: Color(0xFFEB1555),
+                margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
+                width: double.infinity,
+                height: 80.0,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
