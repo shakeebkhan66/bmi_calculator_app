@@ -21,6 +21,7 @@ class _InputPageState extends State<InputPage> {
   Gender selectGender;
   int sliderHeight = 180;
   int sliderWeight = 60;
+  int sliderAge = 20;
   // Color maleColor = deActiveColor;
   // Color feMaleColor = deActiveColor;
   // void updateColor(Gender gendertype) {
@@ -135,23 +136,104 @@ class _InputPageState extends State<InputPage> {
                           style: laText,
                         ),
                         Row(
-                          children: <Widget>[],
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            RoundIcon(
+                              iconData: FontAwesomeIcons.minus,
+                              onPress: () {
+                                setState(() {
+                                  sliderWeight--;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10.0),
+                            RoundIcon(
+                              iconData: FontAwesomeIcons.plus,
+                              onPress: () {
+                                setState(() {
+                                  sliderWeight++;
+                                });
+                              },
+                            ),
+                          ],
                         ),
                       ],
                     ),
                   ),
                 ),
                 Expanded(
-                  child: new RepeatContainerCode(colors: Color(0xFF1D1E33)),
+                  child: new RepeatContainerCode(
+                    colors: Color(0xFF1D1E33),
+                    CardWidget: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'AGE',
+                          style: skLabelStyle,
+                        ),
+                        Text(
+                          sliderAge.toString(),
+                          style: laText,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            RoundIcon(
+                              iconData: FontAwesomeIcons.minus,
+                              onPress: () {
+                                setState(() {
+                                  sliderAge--;
+                                });
+                              },
+                            ),
+                            SizedBox(width: 10.0),
+                            RoundIcon(
+                              iconData: FontAwesomeIcons.plus,
+                              onPress: () {
+                                setState(() {
+                                  sliderAge++;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
           ),
+          Container(
+            color: Color(0xFFEB1555),
+            margin: EdgeInsets.only(top: 10.0),
+            width: double.infinity,
+            height: 80.0,
+          )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+    );
+  }
+}
+
+// ToDo Create separte class for Round Icon Button using in BMI Calculator
+class RoundIcon extends StatelessWidget {
+  final IconData iconData;
+  final Function onPress;
+  RoundIcon({@required this.iconData, this.onPress});
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      child: Icon(iconData),
+      onPressed: onPress,
+      elevation: 7.0,
+      constraints: BoxConstraints.tightFor(
+        height: 56.0,
+        width: 40.0,
       ),
+      shape: CircleBorder(),
+      fillColor: Color(0xFF4C4F5E),
     );
   }
 }
