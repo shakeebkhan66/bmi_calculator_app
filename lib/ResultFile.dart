@@ -18,7 +18,14 @@ class ResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI Result'),
+        title: Text(
+          'Results of Inputs',
+          style: TextStyle(
+              color: Colors.black,
+              fontFamily: 'Times New Roman',
+              fontSize: 28.0,
+              fontWeight: FontWeight.bold),
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -43,7 +50,7 @@ class ResultScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    resultText.toUpperCase(),
+                    resultText,
                     style: sResult,
                   ),
                   Text(
@@ -72,7 +79,7 @@ class ResultScreen extends StatelessWidget {
                     style: sButton,
                   ),
                 ),
-                color: Color(0xFFEB1555),
+                color: Colors.amber,
                 margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
                 width: double.infinity,
                 height: 80.0,

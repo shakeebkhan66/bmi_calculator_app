@@ -41,7 +41,14 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: Text(
+          'BMI CALCULATOR',
+          style: TextStyle(
+              color: Colors.black,
+              fontFamily: 'Times New Roman',
+              fontWeight: FontWeight.bold,
+              fontSize: 28.0),
+        ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -87,7 +94,7 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: new RepeatContainerCode(
-              colors: Color(0xFF1D1E33),
+              colors: Colors.amber,
               CardWidget: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -228,7 +235,7 @@ class _InputPageState extends State<InputPage> {
                   style: sButton,
                 ),
               ),
-              color: Color(0xFFEB1555),
+              color: Colors.amber,
               margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
               width: double.infinity,
               height: 80.0,
