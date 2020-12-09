@@ -1,3 +1,4 @@
+import 'package:bmi_calculator_app/Brain.dart';
 import 'package:bmi_calculator_app/constantFile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'IconTextFile.dart';
 import 'ContainerFile.dart';
 import 'constantFile.dart';
+import 'ResultFile.dart';
 import 'ResultFile.dart';
 
 enum Gender {
@@ -208,8 +210,16 @@ class _InputPageState extends State<InputPage> {
           // ToDo use GestureDetector and Navigator Widget to go on another Screen
           GestureDetector(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ResultScreen()));
+              CalculatorBrain calc =
+                  CalculatorBrain(height: sliderHeight, weight: sliderWeight);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ResultScreen(
+                            bmiResult: calc.CalculateBMI(),
+                            resultText: calc.getResult(),
+                            interpretation: calc.getInterpretation(),
+                          )));
             },
             child: Container(
               child: Center(

@@ -3,8 +3,17 @@ import 'package:flutter/material.dart';
 import 'constantFile.dart';
 import 'ContainerFile.dart';
 import 'input_page.dart';
+import 'Brain.dart';
 
 class ResultScreen extends StatelessWidget {
+  ResultScreen(
+      {@required this.bmiResult,
+      @required this.resultText,
+      @required this.interpretation});
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,15 +43,15 @@ class ResultScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Normal',
+                    resultText.toUpperCase(),
                     style: sResult,
                   ),
                   Text(
-                    '18.3',
+                    bmiResult,
                     style: sBMI,
                   ),
                   Text(
-                    'BMI is low you should have to work more',
+                    interpretation,
                     textAlign: TextAlign.center,
                     style: sBody,
                   ),
