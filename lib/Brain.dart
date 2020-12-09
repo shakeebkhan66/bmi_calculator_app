@@ -17,7 +17,7 @@ class CalculatorBrain {
     } else if (bmi >= 18.5) {
       return 'Normal';
     } else {
-      'UnderWeight';
+      return 'UnderWeight';
     }
   }
 
